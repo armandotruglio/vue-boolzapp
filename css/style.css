@@ -5,6 +5,14 @@
     box-sizing: border-box;
 
     text-align: center;
+
+    font-family: "Lato", sans-serif;
+}
+
+/* Generics */
+img{
+    width: 100%;
+    height: auto;
 }
 
 /* Background */
@@ -34,23 +42,61 @@
     flex-direction: column;
 }
 
+/* Side Nav Header */
 .sidenav header{
-    min-height: 50px;
-    background-color: white;
+    height: 75px;
+    background-color: #eaeaea;
+    border-right: 1px solid lightgray;
+    padding: 0.5rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
+
+header .left-side{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.avatar{
+    height: 40px;
+    width: 40px;
+}
+
+.avatar img{
+    border-radius: 50%;
+}
+
+header .right-side{
+    display: flex;
+    align-items: center;
+}
+
+.right-side .icons{
+    display: flex;
+    gap: 10px;
+    color: #b1b1b1;
+}
+
+/* Side Nav Banner */
 
 .sidenav .banner{
     min-height: 75px;
-    background-color: aqua;
+    background-color: #8edafc;
 }
 
+
+/* Side Nav Search */
 .sidenav .search {
     min-height: 50px;
-    background-color: antiquewhite;
+    background-color: #eaeaea;
 }
 
+/* Side Nav Contacts */
 .sidenav .contacts{
-    background-color: brown;
+    background-color: #ffffff;
 
     flex-grow: 1;
     overflow-y: auto;
@@ -67,18 +113,23 @@
 }
 
 .chat header{
-    min-height: 50px;
-    background-color: white;
+    height: 75px;
+    background-color: #eaeaea;
+    padding: 0.5rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .chat .content{
-    background-color: blanchedalmond;
+    background-image:url("../img/mine.png");
     overflow-y: auto;
 
     flex-grow: 1;
 }
 
 .chat footer{
-    background-color: chocolate;
+    background-color: #f3eeea;
     min-height: 50px;
 }
