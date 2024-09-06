@@ -1,6 +1,84 @@
 /* CSS Reset */
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
+    text-align: center;
+}
+
+/* Background */
+.background {
+    height: 100vh;
+    background: linear-gradient(#009688 15%, #d6dbd7 15%);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Window */
+.window{
+    height: 95vh;
+    width: 70vw;
+    background-color: white;
+
+    display: flex;
+}
+
+/* Side Nav */
+.sidenav{
+    flex-basis: 35%;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.sidenav header{
+    min-height: 50px;
+    background-color: white;
+}
+
+.sidenav .banner{
+    min-height: 75px;
+    background-color: aqua;
+}
+
+.sidenav .search {
+    min-height: 50px;
+    background-color: antiquewhite;
+}
+
+.sidenav .contacts{
+    background-color: brown;
+
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+/* Chat Section */
+.chat{
+    flex-basis: 65%;
+    background-color: blue;
+
+    display: flex;
+    flex-direction: column;
+
+}
+
+.chat header{
+    min-height: 50px;
+    background-color: white;
+}
+
+.chat .content{
+    background-color: blanchedalmond;
+    overflow-y: auto;
+
+    flex-grow: 1;
+}
+
+.chat footer{
+    background-color: chocolate;
+    min-height: 50px;
 }
