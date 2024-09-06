@@ -122,12 +122,49 @@ header .right-side{
     align-items: center;
 }
 
-.chat .content{
+/* Chat Content */
+
+.chat > .content{
     background-image:url("../img/mine.png");
     overflow-y: auto;
 
     flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+
+    padding: 1rem;
 }
+
+.message {
+    min-height: 40px;
+    margin: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 5px;
+    display: flex;
+    gap: 40px;
+}
+
+.message.sent{
+    align-self: flex-end;
+    background-color: #d5f9ba;
+}
+
+.message.received{
+    align-self: flex-start;
+    background-color: white;
+}
+
+
+.message .text{
+    font-size: 0.7rem;
+    align-self: center;
+}
+
+.message time{
+    font-size: 0.5rem;
+    align-self: end;
+}
+
 
 .chat footer{
     background-color: #f3eeea;
