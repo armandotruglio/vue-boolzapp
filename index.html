@@ -27,10 +27,16 @@
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
 
+    <!-- Background -->
     <div class="background">
+
+        <!-- Window app container -->
         <div class="window" id="app">
 
+            <!-- Side Nav -->
             <div class="sidenav">
+
+                <!--Header Profile Section-->
                 <header>
                     <div class="left-side">
                         <div class="avatar">
@@ -47,13 +53,164 @@
                         </div>
                     </div>
                 </header>
-                <div class="banner"> BANNER NOTIFICHE </div>
-                <div class="search"> BARRA DI RICERCA </div>
-                <div class="contacts"> CHAT CONTATTI </div>
+
+                <!-- Banner for Notifications-->
+                <div class="banner">
+                    <div class="bell-icon">
+                        <i class="fa-solid fa-bell-slash"></i>
+                    </div>
+                    <div class="text">
+                        <h5>Ricevi notifiche di nuovi messaggi</h5>
+                        <a href="#"><span>Attiva notifiche desktop</span></a>
+                    </div>
+                </div>
+
+                <!-- Searchbar Section -->
+                <div class="search">
+                    <div class="search-bar">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="text" placeholder="Cerca o inizia una nuova chat">
+                    </div>
+                </div>
+                
+                <!-- Contacts Sections -->
+                <div class="contacts">
+
+                    <!-- Single Contact Card -->
+                    <div class="card">
+                        <div class="left-side">
+                            <div class="avatar">
+                                <img src="img/avatar_1.png" alt="Profile Picture">
+                            </div>
+                            <div class="preview">
+                                <span class="username"> Sofia </span>
+                                <div class="last-text">Ultimo messaggio</div>
+                            </div>
+                        </div>
+                        <time datetime="">10:00</time>
+                    </div>
+
+                    <div class="card">
+                        <div class="left-side">
+                            <div class="avatar">
+                                <img src="img/avatar_1.png" alt="Profile Picture">
+                            </div>
+                            <div class="preview">
+                                <span class="username"> Sofia </span>
+                                <div class="last-text">Ultimo messaggio</div>
+                            </div>
+                        </div>
+                        <time datetime="">10:00</time>
+                    </div>
+
+                    <div class="card">
+                        <div class="left-side">
+                            <div class="avatar">
+                                <img src="img/avatar_1.png" alt="Profile Picture">
+                            </div>
+                            <div class="preview">
+                                <span class="username"> Sofia </span>
+                                <div class="last-text">Ultimo messaggio</div>
+                            </div>
+                        </div>
+                        <time datetime="">10:00</time>
+                    </div>
+
+                    <div class="card active">
+                        <div class="left-side">
+                            <div class="avatar">
+                                <img src="img/avatar_1.png" alt="Profile Picture">
+                            </div>
+                            <div class="preview">
+                                <span class="username"> Sofia </span>
+                                <div class="last-text">Ultimo messaggio</div>
+                            </div>
+                        </div>
+                        <time datetime="">10:00</time>
+                    </div>
+
+                    <div class="card">
+                        <div class="left-side">
+                            <div class="avatar">
+                                <img src="img/avatar_1.png" alt="Profile Picture">
+                            </div>
+                            <div class="preview">
+                                <span class="username"> Sofia </span>
+                                <div class="last-text">Ultimo messaggio</div>
+                            </div>
+                        </div>
+                        <time datetime="">10:00</time>
+                    </div>
+                    <div class="card">
+                        <div class="left-side">
+                            <div class="avatar">
+                                <img src="img/avatar_1.png" alt="Profile Picture">
+                            </div>
+                            <div class="preview">
+                                <span class="username"> Sofia </span>
+                                <div class="last-text">Ultimo messaggio</div>
+                            </div>
+                        </div>
+                        <time datetime="">10:00</time>
+                    </div>
+                    <div class="card">
+                        <div class="left-side">
+                            <div class="avatar">
+                                <img src="img/avatar_1.png" alt="Profile Picture">
+                            </div>
+                            <div class="preview">
+                                <span class="username"> Sofia </span>
+                                <div class="last-text">Ultimo messaggio</div>
+                            </div>
+                        </div>
+                        <time datetime="">10:00</time>
+                    </div>
+                    <div class="card">
+                        <div class="left-side">
+                            <div class="avatar">
+                                <img src="img/avatar_1.png" alt="Profile Picture">
+                            </div>
+                            <div class="preview">
+                                <span class="username"> Sofia </span>
+                                <div class="last-text">Ultimo messaggio</div>
+                            </div>
+                        </div>
+                        <time datetime="">10:00</time>
+                    </div>
+                    <div class="card">
+                        <div class="left-side">
+                            <div class="avatar">
+                                <img src="img/avatar_1.png" alt="Profile Picture">
+                            </div>
+                            <div class="preview">
+                                <span class="username"> Sofia </span>
+                                <div class="last-text">Ultimo messaggio</div>
+                            </div>
+                        </div>
+                        <time datetime="">10:00</time>
+                    </div>
+                    <div class="card">
+                        <div class="left-side">
+                            <div class="avatar">
+                                <img src="img/avatar_1.png" alt="Profile Picture">
+                            </div>
+                            <div class="preview">
+                                <span class="username"> Sofia </span>
+                                <div class="last-text">Ultimo messaggio</div>
+                            </div>
+                        </div>
+                        <time datetime="">10:00</time>
+                    </div>
+
+                </div>
+
             </div>
 
+            
+            <!-- Main Chat Section-->
             <div class="chat">
 
+                <!-- Contact Profile Section -->
                 <header>
                     <div class="left-side">
                         <div class="avatar">
@@ -71,22 +228,36 @@
                     </div>
                 </header>
 
+                <!-- Messages Section -->
                 <div class="content">
 
                     <div class="message sent">
-                            <span class="text">Hai portato a spasso il cane?</span>
-                            <time datetime="">10:00</time>
+                        <span class="text">Hai portato a spasso il cane?</span>
+                        <time datetime="">10:00</time>
                     </div>
                     <div class="message received">
-                            <span class="text">Tutto fatto!</span>
-                            <time datetime="">11:00</time>
+                        <span class="text">Tutto fatto!</span>
+                        <time datetime="">11:00</time>
                     </div>
 
                 </div>
 
-                <footer> FOOTER PER INVIO MESSAGGIO </footer>
-            </div>
+                <!-- Message Input Section -->
+                <footer>
+                    <div class="left-side">
+                        <i class="fa-regular fa-face-smile"></i>
+                    </div>
 
+                    <div class="message-input-bar">
+                        <input type="text" placeholder="Scrivi un messaggio">
+                    </div>
+
+                    <div class="right-side">
+                        <i class="fa-solid fa-microphone"></i>
+                    </div>
+                </footer>
+
+            </div>
         </div>
     </div>
 

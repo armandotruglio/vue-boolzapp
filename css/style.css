@@ -15,6 +15,10 @@ img{
     height: auto;
 }
 
+a{
+    text-decoration: none;
+}
+
 /* Background */
 .background {
     height: 100vh;
@@ -28,10 +32,12 @@ img{
 /* Window */
 .window{
     height: 95vh;
-    width: 70vw;
+    width: 80vw;
     background-color: white;
 
     display: flex;
+
+    box-shadow: 0 0 5px 1px #2222;
 }
 
 /* Side Nav */
@@ -44,7 +50,7 @@ img{
 
 /* Side Nav Header */
 .sidenav header{
-    height: 75px;
+    min-height: 75px;
     background-color: #eaeaea;
     border-right: 1px solid lightgray;
     padding: 0.5rem;
@@ -85,13 +91,67 @@ header .right-side{
 .sidenav .banner{
     min-height: 75px;
     background-color: #8edafc;
+    padding: 10px;
+
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.bell-icon{
+    background-color: white;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bell-icon i{
+    font-size: 1.5rem;
+    color: #8edafc;
+}
+
+.sidenav .banner .text{
+    text-align: left;
+}
+
+.sidenav .banner .text a{
+    color: darkgray;
+    text-decoration: underline;
 }
 
 
 /* Side Nav Search */
 .sidenav .search {
-    min-height: 50px;
+    min-height: 60px;
     background-color: #eaeaea;
+
+    padding: 10px;
+}
+
+.sidenav .search-bar{
+    background-color: white;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.search-bar i{
+    padding: 10px;
+    color: #b1b1b1;
+    border-right: 1px solid lightgray;
+
+    flex-basis: 15%;
+}
+
+.search-bar input{
+    border: none;
+    width: 80%;
+    text-align: start;
+    padding: 5px;
 }
 
 /* Side Nav Contacts */
@@ -100,6 +160,38 @@ header .right-side{
 
     flex-grow: 1;
     overflow-y: auto;
+
+}
+
+.contacts .card{
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    cursor: pointer;
+}
+
+.contacts .card.active{
+    background-color: #e9ebeb;
+}
+
+.contacts .card .left-side{
+    display: flex;
+    gap: 20px;
+}
+
+.contacts .card .preview{
+    text-align: start;
+}
+
+.contacts .card .preview .last-text{
+    font-size: 0.85rem;
+    color: lightgray;
+}
+
+.contacts .card time{
+    align-self: flex-start;
+    color: lightgray;
+    font-size: 0.7rem;
 }
 
 /* Chat Section */
@@ -113,7 +205,7 @@ header .right-side{
 }
 
 .chat header{
-    height: 75px;
+    min-height: 75px;
     background-color: #eaeaea;
     padding: 0.5rem;
 
@@ -141,7 +233,7 @@ header .right-side{
     padding: 0.5rem;
     border-radius: 5px;
     display: flex;
-    gap: 40px;
+    gap: 80px;
 }
 
 .message.sent{
@@ -156,17 +248,33 @@ header .right-side{
 
 
 .message .text{
-    font-size: 0.7rem;
     align-self: center;
 }
 
 .message time{
     font-size: 0.5rem;
-    align-self: end;
+    align-self: flex-end;
 }
 
 
 .chat footer{
     background-color: #f3eeea;
     min-height: 50px;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.message-input-bar{
+    flex-basis: 80%;
+}
+
+.message-input-bar input{
+    width: 100%;
+    min-height: 30px;
+    border: none;
+    border-radius: 5px;
+    text-align: start;
+    padding: 10px;
 }
