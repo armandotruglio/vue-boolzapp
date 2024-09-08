@@ -1,8 +1,10 @@
 const {createApp} = Vue;
+var DateTime = luxon.DateTime;
 
 createApp({
     data() {
         return{
+            currentActiveIndex: 0,
             contacts: [
                 {
                     name: 'Michele',
@@ -166,6 +168,15 @@ createApp({
                     ],
                 }
             ]         
+        }
+    },
+    methods: {
+        changeChat(index) {
+            this.currentActiveIndex = index;
+        },
+        getTime(date) {
+            const time = DateTime.fromFormat(date, "dd/MM/yyyy HH:mm:ss");
+            return `${time.hour}:${time.minute}`
         }
     }
 }).mount('#app');
