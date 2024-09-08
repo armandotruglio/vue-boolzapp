@@ -77,126 +77,14 @@
                 <div class="contacts">
 
                     <!-- Single Contact Card -->
-                    <div class="card">
+                    <div class="card" v-for="(contact, index) in contacts">
                         <div class="left-side">
                             <div class="avatar">
-                                <img src="img/avatar_1.png" alt="Profile Picture">
+                                <img :src="contact.avatar" alt="Profile Picture">
                             </div>
                             <div class="preview">
-                                <span class="username"> Sofia </span>
-                                <div class="last-text">Ultimo messaggio</div>
-                            </div>
-                        </div>
-                        <time datetime="">10:00</time>
-                    </div>
-
-                    <div class="card">
-                        <div class="left-side">
-                            <div class="avatar">
-                                <img src="img/avatar_1.png" alt="Profile Picture">
-                            </div>
-                            <div class="preview">
-                                <span class="username"> Sofia </span>
-                                <div class="last-text">Ultimo messaggio</div>
-                            </div>
-                        </div>
-                        <time datetime="">10:00</time>
-                    </div>
-
-                    <div class="card">
-                        <div class="left-side">
-                            <div class="avatar">
-                                <img src="img/avatar_1.png" alt="Profile Picture">
-                            </div>
-                            <div class="preview">
-                                <span class="username"> Sofia </span>
-                                <div class="last-text">Ultimo messaggio</div>
-                            </div>
-                        </div>
-                        <time datetime="">10:00</time>
-                    </div>
-
-                    <div class="card active">
-                        <div class="left-side">
-                            <div class="avatar">
-                                <img src="img/avatar_1.png" alt="Profile Picture">
-                            </div>
-                            <div class="preview">
-                                <span class="username"> Sofia </span>
-                                <div class="last-text">Ultimo messaggio</div>
-                            </div>
-                        </div>
-                        <time datetime="">10:00</time>
-                    </div>
-
-                    <div class="card">
-                        <div class="left-side">
-                            <div class="avatar">
-                                <img src="img/avatar_1.png" alt="Profile Picture">
-                            </div>
-                            <div class="preview">
-                                <span class="username"> Sofia </span>
-                                <div class="last-text">Ultimo messaggio</div>
-                            </div>
-                        </div>
-                        <time datetime="">10:00</time>
-                    </div>
-                    <div class="card">
-                        <div class="left-side">
-                            <div class="avatar">
-                                <img src="img/avatar_1.png" alt="Profile Picture">
-                            </div>
-                            <div class="preview">
-                                <span class="username"> Sofia </span>
-                                <div class="last-text">Ultimo messaggio</div>
-                            </div>
-                        </div>
-                        <time datetime="">10:00</time>
-                    </div>
-                    <div class="card">
-                        <div class="left-side">
-                            <div class="avatar">
-                                <img src="img/avatar_1.png" alt="Profile Picture">
-                            </div>
-                            <div class="preview">
-                                <span class="username"> Sofia </span>
-                                <div class="last-text">Ultimo messaggio</div>
-                            </div>
-                        </div>
-                        <time datetime="">10:00</time>
-                    </div>
-                    <div class="card">
-                        <div class="left-side">
-                            <div class="avatar">
-                                <img src="img/avatar_1.png" alt="Profile Picture">
-                            </div>
-                            <div class="preview">
-                                <span class="username"> Sofia </span>
-                                <div class="last-text">Ultimo messaggio</div>
-                            </div>
-                        </div>
-                        <time datetime="">10:00</time>
-                    </div>
-                    <div class="card">
-                        <div class="left-side">
-                            <div class="avatar">
-                                <img src="img/avatar_1.png" alt="Profile Picture">
-                            </div>
-                            <div class="preview">
-                                <span class="username"> Sofia </span>
-                                <div class="last-text">Ultimo messaggio</div>
-                            </div>
-                        </div>
-                        <time datetime="">10:00</time>
-                    </div>
-                    <div class="card">
-                        <div class="left-side">
-                            <div class="avatar">
-                                <img src="img/avatar_1.png" alt="Profile Picture">
-                            </div>
-                            <div class="preview">
-                                <span class="username"> Sofia </span>
-                                <div class="last-text">Ultimo messaggio</div>
+                                <span class="username"> {{ contact.name }} </span>
+                                <div class="last-text"> {{ contact.messages[contact.messages.length -1].message }} </div>
                             </div>
                         </div>
                         <time datetime="">10:00</time>

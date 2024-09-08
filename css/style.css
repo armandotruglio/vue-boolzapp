@@ -186,6 +186,7 @@ header .right-side{
 .contacts .card .preview .last-text{
     font-size: 0.85rem;
     color: lightgray;
+    text-align: start;
 }
 
 .contacts .card time{
