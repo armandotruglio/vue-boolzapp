@@ -4,6 +4,8 @@ var DateTime = luxon.DateTime;
 createApp({
     data() {
         return{
+            newMessage: '',
+            filter: '',
             currentActiveIndex: 0,
             contacts: [
                 {
@@ -177,6 +179,32 @@ createApp({
         getTime(date) {
             const time = DateTime.fromFormat(date, "dd/MM/yyyy HH:mm:ss");
             return `${time.hour}:${time.minute}`
+        },
+        getActualDate(){
+            const date = DateTime.now().setLocale('it').toLocaleString(DateTime.DATETIME_SHORT_WITH_SECONDS);
+
+            return date.replace(",", "");
+        },
+        enterNewMessage() {
+            const message = {
+                date: this.getActualDate(),
+                message: this.newMessage,
+                status: 'sent'
+            };
+
+            const receivedMessage = {
+                date: this.getActualDate(),
+                message: 'Ok',
+                status: 'received'
+            };
+
+            this.contacts[this.currentActiveIndex].messages.push(message);
+
+            setTimeout(() => {
+                this.contacts[this.currentActiveIndex].messages.push(receivedMessage);
+            }, 1000);
+
+            this.newMessage = '';
         }
     }
 }).mount('#app');

@@ -70,7 +70,7 @@
                 <div class="search">
                     <div class="search-bar">
                         <i class="fa-solid fa-magnifying-glass"></i>
-                        <input type="text" placeholder="Cerca o inizia una nuova chat">
+                        <input type="text" placeholder="Cerca o inizia una nuova chat" v-model = "filter">
                     </div>
                 </div>
                 
@@ -78,7 +78,7 @@
                 <div class="contacts">
 
                     <!-- Single Contact Card -->
-                    <div class="card" v-for="(contact, index) in contacts" @click = "changeChat(index)"  :class = "{'active' : index === currentActiveIndex}">
+                    <div class="card" v-for="(contact, index) in contacts" @click = "changeChat(index)"  :class = "{'active' : index === currentActiveIndex}" v-show=" filter === '' || contact.name.toLowerCase().includes(filter)">
                         <div class="left-side">
                             <div class="avatar">
                                 <img :src="contact.avatar" alt="Profile Picture">
@@ -134,7 +134,7 @@
                     </div>
 
                     <div class="message-input-bar">
-                        <input type="text" placeholder="Scrivi un messaggio">
+                        <input type="text" placeholder="Scrivi un messaggio" v-model = "newMessage" @keyup.enter="enterNewMessage()">
                     </div>
 
                     <div class="right-side">
