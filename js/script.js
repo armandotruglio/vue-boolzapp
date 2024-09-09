@@ -217,8 +217,8 @@ createApp({
             }
 
         },
-        toggleMenu(index) {
-            if(this.currentMessageIndex === index){
+        toggleMenu(index = -1) {
+            if(this.currentMessageIndex === index || index === -1){
                 this.currentMessageIndex = -1;
             }
             else{

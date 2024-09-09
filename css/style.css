@@ -285,7 +285,7 @@ header .right-side{
     border: 1px solid lightgray;
 }
 .popup-menu li{
-
+    cursor: pointer;
     padding: 0.5rem;
 }
 
