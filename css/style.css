@@ -279,3 +279,7 @@ header .right-side{
     text-align: start;
     padding: 10px;
 }
+
+.offset{
+    min-height: 50px;
+}

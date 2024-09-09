@@ -1,9 +1,9 @@
-const {createApp} = Vue;
+const { createApp } = Vue;
 var DateTime = luxon.DateTime;
 
 createApp({
     data() {
-        return{
+        return {
             newMessage: '',
             filter: '',
             currentActiveIndex: 0,
@@ -169,7 +169,7 @@ createApp({
                         }
                     ],
                 }
-            ]         
+            ]
         }
     },
     methods: {
@@ -178,12 +178,16 @@ createApp({
         },
         getTime(date) {
             const time = DateTime.fromFormat(date, "dd/MM/yyyy HH:mm:ss");
-            return `${time.hour}:${time.minute}`
+            return `${time.hour.toString().padStart(2, 0)}:${time.minute.toString().padStart(2, 0)}`
         },
-        getActualDate(){
-            const date = DateTime.now().setLocale('it').toLocaleString(DateTime.DATETIME_SHORT_WITH_SECONDS);
-
-            return date.replace(",", "");
+        getActualDate() {
+            const date = DateTime.now().toFormat("dd/MM/yyyy HH:mm:ss");
+            return date;
+        },
+        scrollView() {
+            const chatWindow = document.querySelector(".offset");
+            console.log(chatWindow);
+            chatWindow.scrollIntoView();
         },
         enterNewMessage() {
             const message = {
@@ -198,13 +202,18 @@ createApp({
                 status: 'received'
             };
 
-            this.contacts[this.currentActiveIndex].messages.push(message);
+            if (this.newMessage !== '') {
 
-            setTimeout(() => {
-                this.contacts[this.currentActiveIndex].messages.push(receivedMessage);
-            }, 1000);
+                this.contacts[this.currentActiveIndex].messages.push(message);
+                this.scrollView();
+                setTimeout(() => {
+                    this.contacts[this.currentActiveIndex].messages.push(receivedMessage);
+                    this.scrollView();
+                }, 1000);
 
-            this.newMessage = '';
+                this.newMessage = '';
+            }
+
         }
     }
 }).mount('#app');
