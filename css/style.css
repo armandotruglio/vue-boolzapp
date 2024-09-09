@@ -19,6 +19,10 @@ a{
     text-decoration: none;
 }
 
+ul{
+    list-style-type: none;
+}
+
 /* Background */
 .background {
     height: 100vh;
@@ -221,7 +225,7 @@ header .right-side{
     background-image:url("../img/mine.png");
     overflow-y: auto;
 
-    flex-grow: 1;
+    height: calc(100% - 125px);
     display: flex;
     flex-direction: column;
 
@@ -235,8 +239,20 @@ header .right-side{
     border-radius: 5px;
     display: flex;
     gap: 80px;
+
+    position: relative;
 }
 
+.message::after{
+    content: "\2039";
+    transform: rotate(-90deg);
+    color: black;
+    position: absolute;
+    top: 0;
+    right: 15px;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
 .message.sent{
     align-self: flex-end;
     background-color: #d5f9ba;
@@ -255,6 +271,26 @@ header .right-side{
 .message time{
     font-size: 0.5rem;
     align-self: flex-end;
+}
+
+.popup-menu{
+    position: absolute;
+    top: 20px;
+    right: 5px;
+    z-index: 1;
+
+    background-color: white;
+}
+.popup-menu ul{
+    border: 1px solid lightgray;
+}
+.popup-menu li{
+
+    padding: 0.5rem;
+}
+
+.popup-menu li:hover{
+    background-color: gray;
 }
 
 

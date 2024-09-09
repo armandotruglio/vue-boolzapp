@@ -7,6 +7,7 @@ createApp({
             newMessage: '',
             filter: '',
             currentActiveIndex: 0,
+            currentMessageIndex: -1,
             contacts: [
                 {
                     name: 'Michele',
@@ -177,6 +178,8 @@ createApp({
             this.currentActiveIndex = index;
         },
         getTime(date) {
+            if(date === '')
+                return date;
             const time = DateTime.fromFormat(date, "dd/MM/yyyy HH:mm:ss");
             return `${time.hour.toString().padStart(2, 0)}:${time.minute.toString().padStart(2, 0)}`
         },
@@ -185,9 +188,8 @@ createApp({
             return date;
         },
         scrollView() {
-            const chatWindow = document.querySelector(".offset");
-            console.log(chatWindow);
-            chatWindow.scrollIntoView();
+            const offset = document.querySelector(".offset");
+            offset.scrollIntoView({ behavior: "smooth"});
         },
         enterNewMessage() {
             const message = {
@@ -214,6 +216,35 @@ createApp({
                 this.newMessage = '';
             }
 
+        },
+        toggleMenu(index) {
+            if(this.currentMessageIndex === index){
+                this.currentMessageIndex = -1;
+            }
+            else{
+                this.currentMessageIndex = index;
+            }
+        },
+        deleteMessage(index) {
+            this.contacts[this.currentActiveIndex].messages.splice(index, 1);      
+        },
+        getLastMessageDate(index){
+            const contact = this.contacts[index];
+
+            if(contact.messages.length !== 0){
+                return contact.messages[contact.messages.length -1].date; 
+            }
+            
+            return '';
+        },
+        getLastMessageText(index) {
+            const contact = this.contacts[index];
+
+            if(contact.messages.length !== 0){
+                return contact.messages[contact.messages.length -1].message; 
+            }
+            
+            return '';
         }
     }
 }).mount('#app');

@@ -85,10 +85,10 @@
                             </div>
                             <div class="preview">
                                 <span class="username"> {{ contact.name }} </span>
-                                <div class="last-text"> {{ contact.messages[contact.messages.length -1].message }} </div>
+                                <div class="last-text"> {{ getLastMessageText(index) }} </div>
                             </div>
                         </div>
-                        <time :datetime="contact.messages[contact.messages.length -1].date">{{getTime(contact.messages[contact.messages.length -1].date)}}</time>
+                        <time :datetime="getLastMessageDate(index)">{{getTime(getLastMessageDate(index))}}</time>
                     </div>
 
                 </div>
@@ -120,9 +120,15 @@
                 <!-- Messages Section -->
                 <div class="content">
 
-                    <div v-for="(message) in contacts[currentActiveIndex].messages" class="message" :class = "message.status">
+                    <div v-for="(message, index) in contacts[currentActiveIndex].messages" class="message" :class = "message.status" @click = "toggleMenu(index)">
                         <span class="text">{{message.message}}</span>
                         <time :datetime="message.date">{{getTime(message.date)}}</time>
+                        <div class="popup-menu" v-if="index === currentMessageIndex">
+                            <ul>
+                                <li>Info messaggio</li>
+                                <li @click = "deleteMessage(index)">Cancella messaggio</li>
+                            </ul>
+                        </div>
                     </div>
                     <div class="offset"></div>
                 </div>
