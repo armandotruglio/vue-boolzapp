@@ -1,5 +1,5 @@
 const { createApp } = Vue;
-var DateTime = luxon.DateTime;
+const DateTime = luxon.DateTime;
 
 createApp({
     data() {
