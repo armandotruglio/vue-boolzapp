@@ -8,6 +8,7 @@ createApp({
             filter: '',
             currentActiveIndex: 0,
             currentMessageIndex: -1,
+            currentInfoIndex: -1,
             contacts: [
                 {
                     name: 'Michele',
@@ -245,6 +246,14 @@ createApp({
             }
             
             return '';
-        }
+        },
+        toggleInfo(index = -1) {
+            if(this.currentInfoIndex === index || index === -1){
+                this.currentInfoIndex = -1;
+            }
+            else{
+                this.currentInfoIndex = index;
+            }
+        },
     }
 }).mount('#app');

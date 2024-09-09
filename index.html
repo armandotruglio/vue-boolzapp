@@ -35,7 +35,7 @@
         <div class="window" id="app">
 
             <!-- Side Nav -->
-            <div class="sidenav" @click = "toggleMenu()">
+            <div class="sidenav" @click = "toggleMenu(), toggleInfo()">
 
                 <!--Header Profile Section-->
                 <header>
@@ -97,7 +97,7 @@
 
             
             <!-- Main Chat Section-->
-            <div class="chat">
+            <div class="chat" @click="toggleMenu(), toggleInfo()">
 
                 <!-- Contact Profile Section -->
                 <header>
@@ -120,14 +120,17 @@
                 <!-- Messages Section -->
                 <div class="content">
 
-                    <div v-for="(message, index) in contacts[currentActiveIndex].messages" class="message" :class = "message.status" @click = "toggleMenu(index)">
+                    <div v-for="(message, index) in contacts[currentActiveIndex].messages" class="message" :class = "message.status" @click.stop = "toggleMenu(index), toggleInfo()" >
                         <span class="text">{{message.message}}</span>
                         <time :datetime="message.date">{{getTime(message.date)}}</time>
-                        <div class="popup-menu" v-if="index === currentMessageIndex">
+                        <div class="popup-menu delete" v-if="index === currentMessageIndex">
                             <ul>
-                                <li>Info messaggio</li>
-                                <li @click = "deleteMessage(index)">Cancella messaggio</li>
+                                <li @click.stop = "toggleInfo(index), toggleMenu()">Info messaggio</li>
+                                <li @click.stop = "deleteMessage(index)">Cancella messaggio</li>
                             </ul>
+                        </div>
+                        <div class="popup-menu info" v-if="index === currentInfoIndex">
+                            <span>Data di invio : {{ message.date }}</span>
                         </div>
                     </div>
                     <div class="offset"></div>

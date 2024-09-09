@@ -281,16 +281,20 @@ header .right-side{
 
     background-color: white;
 }
-.popup-menu ul{
+.popup-menu.delete ul{
     border: 1px solid lightgray;
 }
-.popup-menu li{
+.popup-menu.delete li{
     cursor: pointer;
     padding: 0.5rem;
 }
 
-.popup-menu li:hover{
+.popup-menu.delete li:hover{
     background-color: gray;
+}
+
+.popup-menu.info{
+    padding: 1rem;
 }
 
 
