@@ -77,7 +77,7 @@
                 <div class="contacts">
 
                     <!-- Single Contact Card -->
-                    <div class="card" v-for="(contact, index) in contacts" @click = "changeChat(index)"  :class = "{'active' : index === currentActiveIndex}" v-show=" filter === '' || contact.name.toLowerCase().includes(filter)">
+                    <div class="card" v-for="(contact, index) in contacts" @click = "changeChat(index)"  :class = "{'active' : index === currentActiveIndex}" v-show=" filter === '' || contact.name.toLowerCase().includes(filter.toLowerCase())">
                         <div class="left-side">
                             <div class="avatar">
                                 <img :src="contact.avatar" alt="Profile Picture">
@@ -117,7 +117,7 @@
                 </header>
 
                 <!-- Messages Section -->
-                <div class="content">
+                <div class="content" id="chat-window">
 
                     <div v-for="(message, index) in contacts[currentActiveIndex].messages" class="message" :class = "message.status" @click.stop = "toggleMenu(index), toggleInfo()" >
                         <span class="text">{{message.message}}</span>
@@ -125,7 +125,7 @@
                         <div class="popup-menu delete" v-if="index === currentMessageIndex">
                             <ul>
                                 <li @click.stop = "toggleInfo(index), toggleMenu()">Info messaggio</li>
-                                <li @click.stop = "deleteMessage(index)">Cancella messaggio</li>
+                                <li @click.stop = "deleteMessage(index), toggleMenu()">Cancella messaggio</li>
                             </ul>
                         </div>
                         <div class="popup-menu info" v-if="index === currentInfoIndex">

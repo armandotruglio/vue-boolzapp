@@ -233,14 +233,16 @@ header .right-side{
 }
 
 .message {
-    min-height: 40px;
+    max-width: 500px;
     margin: 0.5rem;
     padding: 0.5rem;
     border-radius: 5px;
     display: flex;
-    gap: 80px;
+    gap: 20px;
 
     position: relative;
+
+    box-shadow: 0 0 10px 5px lightgray;
 }
 
 .message::after{
@@ -266,11 +268,13 @@ header .right-side{
 
 .message .text{
     align-self: center;
+    text-align: left;
 }
 
 .message time{
     font-size: 0.5rem;
     align-self: flex-end;
+    margin-top: 20px;
 }
 
 .popup-menu{

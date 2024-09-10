@@ -189,8 +189,8 @@ createApp({
             return date;
         },
         scrollView() {
-            const offset = document.querySelector(".offset");
-            offset.scrollIntoView({ behavior: "smooth"});
+            const chatWindow = document.getElementById("chat-window");
+            chatWindow.scrollTop =chatWindow.scrollHeight;
         },
         enterNewMessage() {
             const message = {
